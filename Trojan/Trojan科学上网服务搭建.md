@@ -51,76 +51,72 @@ V2Ray和Trojan有如下区别及特点：
 - 执行一键脚本进行安装。
 
 ```bash
-wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+wget -O tcpx.sh "https://git.io/JYxKU" && chmod +x tcpx.sh && ./tcpx.sh
 ```
 
-- 选择2安装 BBRplus版内核。
+- 选择5安装 BBRplus新版内核。
 
 ```bash
- TCP加速 一键安装管理脚本 [v1.3.2]
-  -- 就是爱生活 | 94ish.me --
-
-  0. 升级脚本
-     ————————————内核管理————————————
-  1. 安装 BBR/BBR魔改版内核
-  2. 安装 BBRplus版内核
-  3. 安装 Lotserver(锐速)内核
-     ————————————加速管理————————————
-  4. 使用BBR加速
-  5. 使用BBR魔改版加速
-  6. 使用暴力BBR魔改版加速(不支持部分系统)
-  7. 使用BBRplus版加速
-  8. 使用Lotserver(锐速)加速
-     ————————————杂项管理————————————
-  9. 卸载全部加速
-  10. 系统配置优化
-  11. 退出脚本
-      ————————————————————————————————
-
- 当前状态: 已安装 BBRplus 加速内核 , BBRplus启动成功
-
- 请输入数字 [0-11]:2
+ TCP加速 一键安装管理脚本 [v1.3.2.100] 不卸内核 from blog.ylx.me 母鸡慎用
+ 0. 升级脚本
+ 9. 切换到卸载内核版本          10. 切换到一键DD系统脚本
+ 1. 安装 BBR原版内核
+ 2. 安装 BBRplus版内核          5. 安装 BBRplus新版内核
+ 3. 安装 Lotserver(锐速)内核    6. 安装 Zen官方内核
+ 30. 安装 官方稳定内核          31. 安装 官方最新内核 backports/elrepo
+ 32. 安装 XANMOD官方内核        33. 安装 XANMOD官方高响应内核
+ 11. 使用BBR+FQ加速             12. 使用BBR+FQ_PIE加速
+ 13. 使用BBR+CAKE加速
+ 14. 使用BBR2+FQ加速            15. 使用BBR2+FQ_PIE加速
+ 16. 使用BBR2+CAKE加速
+ 17. 开启ECN                    18. 关闭ECN
+ 19. 使用BBRplus+FQ版加速       20. 使用Lotserver(锐速)加速
+ 21. 系统配置优化               22. 应用johnrosen1的优化方案
+ 23. 禁用IPv6                   24. 开启IPv6
+ 51. 查看排序内核               52. 删除保留指定内核
+ 25. 卸载全部加速               99. 退出脚本
+————————————————————————————————————————————————————————————————
+ 系统信息: Debian GNU/Linux 10 Microsoft Hyper-V x86_64 5.10.0-0.bpo.9-cloud-amd64
+ 当前状态: 已安装 BBR 加速内核 , 未安装加速模块
+ 当前拥塞控制算法为: cubic 当前队列算法为: fq
+ 请输入数字 :5
 ```
 
-- 中间需要重启一次，输入Y重启即可。
+- 然后执行./tcpx.sh，选择19使用BBRplus+FQ版加速。
 
 ```bash
-[注意] 重启VPS后，请重新运行脚本开启BBRplus
-需要重启VPS后，才能开启BBRplus，是否现在重启 ? [Y/n] :Y
-[信息] VPS 重启中...
+ TCP加速 一键安装管理脚本 [v1.3.2.100] 不卸内核 from blog.ylx.me 母鸡慎用
+ 0. 升级脚本
+ 9. 切换到卸载内核版本          10. 切换到一键DD系统脚本
+ 1. 安装 BBR原版内核
+ 2. 安装 BBRplus版内核          5. 安装 BBRplus新版内核
+ 3. 安装 Lotserver(锐速)内核    6. 安装 Zen官方内核
+ 30. 安装 官方稳定内核          31. 安装 官方最新内核 backports/elrepo
+ 32. 安装 XANMOD官方内核        33. 安装 XANMOD官方高响应内核
+ 11. 使用BBR+FQ加速             12. 使用BBR+FQ_PIE加速
+ 13. 使用BBR+CAKE加速
+ 14. 使用BBR2+FQ加速            15. 使用BBR2+FQ_PIE加速
+ 16. 使用BBR2+CAKE加速
+ 17. 开启ECN                    18. 关闭ECN
+ 19. 使用BBRplus+FQ版加速       20. 使用Lotserver(锐速)加速
+ 21. 系统配置优化               22. 应用johnrosen1的优化方案
+ 23. 禁用IPv6                   24. 开启IPv6
+ 51. 查看排序内核               52. 删除保留指定内核
+ 25. 卸载全部加速               99. 退出脚本
+————————————————————————————————————————————————————————————————
+ 系统信息: Debian GNU/Linux 10 Microsoft Hyper-V x86_64 5.10.0-0.bpo.9-cloud-amd64
+ 当前状态: 已安装 BBR 加速内核 , 未安装加速模块
+ 当前拥塞控制算法为: cubic 当前队列算法为: fq
+ 请输入数字 :19
 ```
 
-- 重启后运行tcp.sh脚本，选择7使用BBRplus版加速。
+- 重启一次。
 
 ```bash
- [root@localhost ~]# ./tcp.sh
- 
- TCP加速 一键安装管理脚本 [v1.3.2]
-  -- 就是爱生活 | 94ish.me --
-
-  0. 升级脚本
-     ————————————内核管理————————————
-  1. 安装 BBR/BBR魔改版内核
-  2. 安装 BBRplus版内核
-  3. 安装 Lotserver(锐速)内核
-     ————————————加速管理————————————
-  4. 使用BBR加速
-  5. 使用BBR魔改版加速
-  6. 使用暴力BBR魔改版加速(不支持部分系统)
-  7. 使用BBRplus版加速
-  8. 使用Lotserver(锐速)加速
-     ————————————杂项管理————————————
-  9. 卸载全部加速
-  10. 系统配置优化
-  11. 退出脚本
-      ————————————————————————————————
-
- 当前状态: 已安装 BBRplus 加速内核 , BBRplus启动成功
-
- 请输入数字 [0-11]:7
+init 6
 ```
 
-- 当当前状态为“已安装 BBRplus 加速内核 , BBRplus启动成功”时，即为BBR加速成功。
+- 重启完成后再执行./tcpx.sh，当前状态: 已安装 BBRplus 加速内核 , BBRplus启动成功则说明内核安装成功。
 
 #### 3.3 安装Trojan
 
